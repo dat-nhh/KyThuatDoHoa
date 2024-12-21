@@ -1,0 +1,49 @@
+# Project: bresenham
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = bre1.o bre2.o bre3.o bre4.o bre5.o bre6.o bre7.o bre8.o
+LINKOBJ  = bre1.o bre2.o bre3.o bre4.o bre5.o bre6.o bre7.o bre8.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -lbgi -lgdi32 -luser32 -m32
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = bresenham.exe
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+bre1.o: bre1.cpp
+	$(CPP) -c bre1.cpp -o bre1.o $(CXXFLAGS)
+
+bre2.o: bre2.cpp
+	$(CPP) -c bre2.cpp -o bre2.o $(CXXFLAGS)
+
+bre3.o: bre3.cpp
+	$(CPP) -c bre3.cpp -o bre3.o $(CXXFLAGS)
+
+bre4.o: bre4.cpp
+	$(CPP) -c bre4.cpp -o bre4.o $(CXXFLAGS)
+
+bre5.o: bre5.cpp
+	$(CPP) -c bre5.cpp -o bre5.o $(CXXFLAGS)
+
+bre6.o: bre6.cpp
+	$(CPP) -c bre6.cpp -o bre6.o $(CXXFLAGS)
+
+bre7.o: bre7.cpp
+	$(CPP) -c bre7.cpp -o bre7.o $(CXXFLAGS)
+
+bre8.o: bre8.cpp
+	$(CPP) -c bre8.cpp -o bre8.o $(CXXFLAGS)
